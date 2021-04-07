@@ -1,0 +1,13 @@
+.image-item {
+  /* padding: 0 20px; */
+  /* padding: 20px 0 20px 20px; */
+  width: 100%;
+  height: fit-content;
+}
+
+.item {
+  /* margin: 0 20px; */
+  border: 2px solid green;
+  width: 100%;
+  /* padding-right: 2rem; */
+}
