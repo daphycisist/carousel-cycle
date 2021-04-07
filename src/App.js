@@ -1,9 +1,6 @@
 import React from "react";
 import CarouselCard from "./components/CarouselCard/index";
-// import CarouselCard from "./components/CarouselCard";
 import "react-multi-carousel/lib/styles.css";
-// import ReactCarousel from "./components/ReactCarousel";
-const cycles = ["Cycle 1", "Cycle 2", "Cycle 3", "Cycle 4", "Cycle 5"];
 
 // const images = [
 //   "https://images.unsplash.com/photo-1549989476-69a92fa57c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",

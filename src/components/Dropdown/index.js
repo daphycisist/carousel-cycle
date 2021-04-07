@@ -4,31 +4,28 @@ import "./styles.css";
 
 const Dropdown = ({ data, handleCycleChange }) => {
   const [isOpen, setOpen] = useState(false);
-  const [items, setItem] = useState(data);
-  const [selectedItem, setSelectedItem] = useState(null);
+  const [selectedItem, setSelectedItem] = useState(data[0]);
 
   const toggleDropdown = () => setOpen(!isOpen);
 
   const handleItemClick = (id) => {
-    selectedItem === id ? setSelectedItem(null) : setSelectedItem(id);
+    const newSeleectedItem = data.find((elem) => elem.id === id);
+    setSelectedItem(newSeleectedItem);
     setOpen(!isOpen);
   };
 
   return (
     <div className="dropdown">
       <div className="dropdown-header" onClick={toggleDropdown}>
-        {selectedItem
-          ? items.find((item) => item.id === Number(selectedItem)).label
-          : `${items[0].label}`}
-          
+        {selectedItem?.label}
         <FaCaretDown className={` icon ${isOpen && "open"}`} />
       </div>
       <div className={`dropdown-body ${isOpen && "open"}`}>
-        {items.map((item) => (
+        {data.map((item) => (
           <div
             className="dropdown-item"
             onClick={(e) => {
-              handleItemClick(e.target.id);
+              handleItemClick(item.id);
               handleCycleChange(item.id);
             }}
             id={item.id}
